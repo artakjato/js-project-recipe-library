@@ -31,38 +31,52 @@
 
 
 <body>
-  <h1>Recipe Library</h1>
+  <h1 class="main-header">Recipe Library</h1>
 
-  <p>Filter on kitchen</p>
-  <p>Sort on time</p>
+  <div class="button-labels">
+    <p>Filter on kitchen</p>
+    <p>Sort on time</p>
+  </div>
 
   <div class="buttons">
-    <a href="#">Balkan</a>
-    <a href="#">Swedish</a>
-    <a href="#">USA</a>
-    <a href="#">Descending</a>
-    <a href="#">Ascending</a>
+    <div class="filter-buttons">
+      <a href="#">Balkan</a>
+      <a href="#">Swedish</a>
+      <a href="#">USA</a>
+      <a href="#">German</a>
+    </div>
+    <div class="sorting-buttons">
+      <a href="#">Descending</a>
+      <a href="#">Ascending</a>
+    </div>
   </div>
 
   <!--Recipe Cards-->
-  <section class="recipes-cards">
-    <div class="recipe-card">
-      <h2>temporary placeholder for filters/sorting options</h2>
+  <section class="cards">
+    <div class="sorting-card">
+      <h2>Temporary placeholder for filters/sorting options</h2>
     </div>
     <div class="recipe-card">
-      <img
-        src="Tavce_gravce.jpg"
-        alt="Baked beans sprinkled with a few mint leaves in a baking pot"
-      />
-      <h3>Balkan style Baked beans</h3>
-      <p><strong>Cuisine:</strong> Balkan</p>
-      <p><strong>Preparation time:</strong> 1h</p>
-      <p><strong>Ingredients:</strong><br>
-        500gr. white beans<br>
-        1 onion<br>
-        5 teaspoons red pepper<br>
-        1 teaspoon salt
-      </p>
+      <div class="image-wrapper">
+        <img
+          class="food-image"
+          src="Tavce_gravce.jpg"
+          alt="Baked beans sprinkled with a few mint leaves in a baking pot"
+        />
+      </div>
+      <div class="text-wrapper">
+        <h3>Balkan style Baked beans</h3>
+        <hr class="solid">
+        <p><strong>Cuisine:</strong> Balkan</p>
+        <p><strong>Preparation time:</strong> 1h</p>
+        <hr class="solid">
+        <p><strong>Ingredients:</strong><br>
+          500gr. white beans<br>
+          1 onion<br>
+          5 teaspoons red pepper<br>
+          1 teaspoon salt
+        </p>
+      </div>
 
     </div>
 

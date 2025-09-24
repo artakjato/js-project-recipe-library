@@ -1,0 +1,91 @@
+body {
+  background-color: #d3d3d340;
+}
+
+.main-header {
+  font-size: 50px;
+  color: darkblue;
+}
+
+.button-labels {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  font-weight: bold;
+  width: 800px;
+}
+
+.button-labels p {
+  width: 350px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  width: 800px;
+}
+
+.buttons a {
+  text-decoration: none;
+}
+
+.sorting-buttons,
+.filter-buttons {
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-evenly; */
+}
+
+.sorting-buttons {
+  margin-left: 3em;
+}
+
+.filter-buttons a {
+  background-color: #d4f5e7;
+  padding: 10px;
+  border-radius: 25%;
+  margin-right: 10px;
+}
+
+.sorting-buttons a {
+  background-color: lightpink;
+  padding: 10px;
+  border-radius: 25%;
+  margin-right: 10px;
+}
+
+.sorting-card,
+.recipe-card {
+  width: 300px;
+  height: 500px;
+  border: 1px solid #808080ad;
+  border-radius: 10px;
+  box-shadow: 5px 5px 18px -7px;
+  background-color: #FFF;
+  padding: 0 15px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2em;
+}
+
+.recipe-card {
+  margin-left: 1em;
+}
+
+.food-image {
+  width: -webkit-fill-available;
+  border-radius: 10px;
+}
+
+.image-wrapper {
+  padding: 10px 10px;
+  margin-top: 1em;
+}
+
+hr.solid {
+  border-top: 1px solid #bbb;
+}
