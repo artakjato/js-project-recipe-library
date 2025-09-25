@@ -64,6 +64,7 @@ body {
   box-shadow: 5px 5px 18px -7px;
   background-color: #FFF;
   padding: 0 15px;
+  
 }
 
 .cards {
@@ -74,6 +75,7 @@ body {
 
 .recipe-card {
   margin-left: 1em;
+  text-decoration: none;
 }
 
 .food-image {
@@ -88,4 +90,63 @@ body {
 
 hr.solid {
   border-top: 1px solid #bbb;
+}
+
+:any-link {
+  text-decoration: none;
+  color: black;
+}
+
+@media (max-width: 1600px) {
+
+  .main-header {
+    font-size: 1em;
+  }
+
+  .button-labels {
+    font-size: 15px;
+    width: 19em;
+  }
+
+  .sorting-buttons,
+  .filter-buttons {
+    width: auto;
+  }
+
+  .filter-buttons a {
+    padding: 4px;
+    align-self: center;
+    font-size: 8px;
+    margin-right: 2px;
+  }
+
+  .sorting-buttons a {
+    padding: 4px;
+    align-self: center;
+    font-size: 8px;
+    margin-right: 2px;
+  }
+  
+  .sorting-buttons {
+    margin-left:5px;
+  }
+
+  .sorting-card,
+  .recipe-card {
+    width: 90px;
+    max-height: 245px;
+    font-size: 6px;
+  }
+
+  .cards {
+    margin-top: 1em;
+  }
+}
+
+/*Media query TBC*/
+@media (max-width: 767px) {
+
+.main-header{
+  font-size: 50px;
+}
 }

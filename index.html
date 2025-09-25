@@ -31,8 +31,10 @@
 
 
 <body>
+  <main class="page">
   <h1 class="main-header">Recipe Library</h1>
-
+  
+  <!--All buttons-->
   <div class="button-labels">
     <p>Filter on kitchen</p>
     <p>Sort on time</p>
@@ -40,24 +42,32 @@
 
   <div class="buttons">
     <div class="filter-buttons">
-      <a href="#">Balkan</a>
-      <a href="#">Swedish</a>
-      <a href="#">USA</a>
-      <a href="#">German</a>
-    </div>
-    <div class="sorting-buttons">
-      <a href="#">Descending</a>
-      <a href="#">Ascending</a>
+      <a id="balkan" href="#">Balkan</a>
+      <a id="swedish" href="#">Swedish</a>
+      <a id="usa" href="#">USA</a>
+      <a id="german" href="#">German</a>
+  </div>
+  <div class="sorting-buttons">
+      <a id="descending" href="#">Descending</a>
+      <a id="ascending" href="#">Ascending</a>
     </div>
   </div>
 
-  <!--Recipe Cards-->
+<!--Recipe Cards-->
   <section class="cards">
     <div class="sorting-card">
       <h2>Temporary placeholder for filters/sorting options</h2>
+      <p id="filter-text"></p>
+      <!-- <p>Up for some meat with everything?</p>
+      <p>Fan av köttbullar?</p>
+      <p>Burgers with fries?</p>
+      <p>How many ways to cook a schnitzel?</p>
+      <p>Narrowing down much?</p>
+      <p>Working our way up, are we?</p> -->
     </div>
-    <div class="recipe-card">
+    <div class="recipe-card"> 
       <div class="image-wrapper">
+        <a href="https://bakinghermann.com/tavce-gravce-macedonian-baked-beans/"target="_blank">
         <img
           class="food-image"
           src="Tavce_gravce.jpg"
@@ -75,12 +85,13 @@
           1 onion<br>
           5 teaspoons red pepper<br>
           1 teaspoon salt
+        </a>
         </p>
       </div>
-
     </div>
-
   </section>
+</main>
+
 
   <script src="./app.js"></script>
 </body>
