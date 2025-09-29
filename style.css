@@ -13,6 +13,7 @@ body {
   font-size: 20px;
   font-weight: bold;
   width: 800px;
+  justify-content: space-around;
 }
 
 .button-labels p {
@@ -38,27 +39,40 @@ body {
 }
 
 .sorting-buttons {
-  margin-left: 3em;
+  margin-left: 7em;
 }
 
 .filter-buttons a {
-  background-color: #d4f5e7;
-  padding: 10px;
+  /*background-color: #d4f5e7;*/
+  cursor: pointer;
   border-radius: 25%;
   margin-right: 10px;
+  display: inline-block;       /* makes the border wrap around */
+  padding: 8px 14px;
+  text-decoration: none;       /* remove underline */      /* default border */
+  border: 2px solid#d4f5e7; 
 }
 
 .sorting-buttons a {
-  background-color: lightpink;
-  padding: 10px;
+  /*background-color: lightpink;*/
+  cursor: pointer;
   border-radius: 25%;
   margin-right: 10px;
+  display: inline-block;       /* makes the border wrap around */
+  padding: 8px 14px;
+  text-decoration: none;       /* remove underline */      /* default border */
+  border: 2px solid lightpink; 
+}
+
+.filter-buttons a:hover,
+.sorting-buttons a:hover {
+  border-color: blue;
 }
 
 .sorting-card,
 .recipe-card {
   width: 300px;
-  height: 500px;
+  height: fit-content;
   border: 1px solid #808080ad;
   border-radius: 10px;
   box-shadow: 5px 5px 18px -7px;
@@ -71,10 +85,11 @@ body {
   display: flex;
   flex-direction: row;
   margin-top: 2em;
+  flex-wrap: wrap;
 }
 
 .recipe-card {
-  margin-left: 1em;
+  margin-left: 5em;
   text-decoration: none;
 }
 
