@@ -24,7 +24,7 @@ const mockupRecipes = [
     servings: 4,
     sourceUrl: "https://example.com/vegan-lentil-soup",
     diets: ["vegan"],
-    cuisine: "German",
+    cuisine: "Swedish",
     ingredients: [
       "red lentils",
       "carrots",
@@ -116,7 +116,7 @@ const mockupRecipes = [
     servings: 4,
     sourceUrl: "https://example.com/middle-eastern-hummus",
     diets: ["vegan", "gluten-free"],
-    cuisine: "German",
+    cuisine: "USA",
     ingredients: [
       "chickpeas",
       "tahini",
@@ -199,8 +199,25 @@ const mockupRecipes = [
 let cards = document.querySelector('.cards');
 
 function renderRecipes(recipes) {
-  cards.innerHTML = "";  //cleans the .cards container 
-  recipes.forEach(recipe => {    //loops over each recipe in the array
+  //cleans the .cards container 
+  cards.innerHTML = "";  
+  // Returns empty state
+  if (!Array.isArray(recipes) || recipes.length === 0) {  
+    cards.innerHTML = `
+  <div class="empty-state">
+      <div class="empty-gif">
+      <img 
+        src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWZvYmNweG5jaTM5bGUzOXlxNHpwNm4yaXJwYjZ3Mjdia2MwZjZpcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jKaFXbKyZFja0/giphy.gif" 
+        alt="No recipes found" 
+      />
+      </div>
+    <p>No recipes found. Try a different filter</p>
+  </div>
+    `;
+    return;
+  }
+//loops over each recipe in the array
+  recipes.forEach(recipe => {    
     cards.innerHTML += `
       <div class="recipe-card"> 
       <div class="image-wrapper">
@@ -250,6 +267,7 @@ const germanButton = document.querySelector('#german').addEventListener('click',
   const germanRecipe = mockupRecipes.filter(recipe => recipe.cuisine == 'German');
   renderRecipes(germanRecipe);
 });
+
 
 //descending button
 const descendingButton = document.querySelector('#descending').addEventListener('click', () => {
