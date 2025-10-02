@@ -246,7 +246,21 @@ function renderRecipes(recipes) {
 
 renderRecipes(mockupRecipes);
 
-const allButton = document.querySelector('#all').addEventListener('click', () => renderRecipes(mockupRecipes));
+//const allButton = document.querySelector('#all').addEventListener('click', () => renderRecipes(mockupRecipes));
+
+function filterRecipes(value) {
+  if (value === "all") {
+    renderRecipes(mockupRecipes);
+    return;
+  }
+  const filtered = mockupRecipes.filter(r => r.diets.includes(value));
+  renderRecipes(filtered);
+}
+
+document.querySelector('#all').addEventListener('click', (e) => {
+  e.preventDefault(); // stops page from jumping to "#"
+  renderRecipes(mockupRecipes); // show all recipes
+});
 
 const balkanButton = document.querySelector('#balkan').addEventListener('click', () => {
   const balkanRecipe = mockupRecipes.filter(recipe => recipe.cuisine == 'Balkan');
@@ -285,13 +299,11 @@ const ascendingButton = document.querySelector('#ascending').addEventListener('c
 });
 
 const surpriseButton = document.querySelector('#surprise');
-
 surpriseButton.addEventListener('click', () => {
   if (!mockupRecipes || mockupRecipes.length === 0) {
     renderRecipes([]); // or showEmptyState('No recipes yet');
     return;
   }
-
   //CHECK THIS FIRST
   const index = Math.floor(Math.random() * mockupRecipes.length);
   const selected = mockupRecipes[index];
@@ -299,6 +311,4 @@ surpriseButton.addEventListener('click', () => {
   // If renderRecipes expects an array, pass a single-item array:
   renderRecipes([selected]);
 
-  // If you have a dedicated single-item renderer, you could do:
-  // renderRecipe(selected);
 });
