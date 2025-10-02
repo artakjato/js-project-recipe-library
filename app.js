@@ -24,7 +24,7 @@ const mockupRecipes = [
     servings: 4,
     sourceUrl: "https://example.com/vegan-lentil-soup",
     diets: ["vegan"],
-    cuisine: "Mediterranean",
+    cuisine: "German",
     ingredients: [
       "red lentils",
       "carrots",
@@ -48,7 +48,7 @@ const mockupRecipes = [
     servings: 2,
     sourceUrl: "https://example.com/vegetarian-pesto-pasta",
     diets: ["vegetarian"],
-    cuisine: "Italian",
+    cuisine: "USA",
     ingredients: [
       "pasta",
       "basil",
@@ -70,7 +70,7 @@ const mockupRecipes = [
     servings: 3,
     sourceUrl: "https://example.com/gluten-free-chicken-stir-fry",
     diets: ["gluten-free"],
-    cuisine: "Asian",
+    cuisine: "USA",
     ingredients: [
       "chicken breast",
       "broccoli",
@@ -96,7 +96,7 @@ const mockupRecipes = [
     servings: 2,
     sourceUrl: "https://example.com/dairy-free-tacos",
     diets: ["dairy-free"],
-    cuisine: "Mexican",
+    cuisine: "USA",
     ingredients: [
       "corn tortillas",
       "ground beef",
@@ -116,7 +116,7 @@ const mockupRecipes = [
     servings: 4,
     sourceUrl: "https://example.com/middle-eastern-hummus",
     diets: ["vegan", "gluten-free"],
-    cuisine: "Middle Eastern",
+    cuisine: "German",
     ingredients: [
       "chickpeas",
       "tahini",
@@ -135,7 +135,7 @@ const mockupRecipes = [
     servings: 1,
     sourceUrl: "https://example.com/quick-avocado-toast",
     diets: ["vegan"],
-    cuisine: "Mediterranean",
+    cuisine: "Swedish",
     ingredients: [
       "bread",
       "avocado",
@@ -153,7 +153,7 @@ const mockupRecipes = [
     servings: 5,
     sourceUrl: "https://example.com/beef-stew",
     diets: [],
-    cuisine: "European",
+    cuisine: "Balkan",
     ingredients: [
       "beef chunks",
       "potatoes",
@@ -199,12 +199,12 @@ const mockupRecipes = [
 let cards = document.querySelector('.cards');
 
 function renderRecipes(recipes) {
-  cards.innerHTML = "";
-  recipes.forEach(recipe => {
+  cards.innerHTML = "";  //cleans the .cards container 
+  recipes.forEach(recipe => {    //loops over each recipe in the array
     cards.innerHTML += `
       <div class="recipe-card"> 
       <div class="image-wrapper">
-      <a href="${recipe.sourceUrl}"target="_blank">
+      <a href="${recipe.sourceUrl}" target="_blank">  
       <img
           class="food-image"
           src="Tavce_gravce.jpg"
@@ -234,4 +234,53 @@ const allButton = document.querySelector('#all').addEventListener('click', () =>
 const balkanButton = document.querySelector('#balkan').addEventListener('click', () => {
   const balkanRecipe = mockupRecipes.filter(recipe => recipe.cuisine == 'Balkan');
   renderRecipes(balkanRecipe);
+});
+
+const swedishButton = document.querySelector('#swedish').addEventListener('click', () => {
+  const swedishRecipe = mockupRecipes.filter(recipe => recipe.cuisine == 'Swedish');
+  renderRecipes(swedishRecipe);
+});
+
+const usaButton = document.querySelector('#usa').addEventListener('click', () => {
+  const usaRecipe = mockupRecipes.filter(recipe => recipe.cuisine == 'USA');
+  renderRecipes(usaRecipe);
+});
+
+const germanButton = document.querySelector('#german').addEventListener('click', () => {
+  const germanRecipe = mockupRecipes.filter(recipe => recipe.cuisine == 'German');
+  renderRecipes(germanRecipe);
+});
+
+//descending button
+const descendingButton = document.querySelector('#descending').addEventListener('click', () => {
+  const descendingRecipes = [...mockupRecipes].sort((a, b) => b.readyInMinutes - a.readyInMinutes);
+  renderRecipes(descendingRecipes);
+});
+
+
+// mockupRecipes.sort((a,b) creates a new array - so USE [...mockupRecipes].sort((a, b)
+
+//ascending button
+const ascendingButton = document.querySelector('#ascending').addEventListener('click', () => {
+  const ascendingRecipes = [...mockupRecipes].sort((a, b) => a.readyInMinutes - b.readyInMinutes);
+  renderRecipes(ascendingRecipes);
+});
+
+const surpriseButton = document.querySelector('#surprise');
+
+surpriseButton.addEventListener('click', () => {
+  if (!mockupRecipes || mockupRecipes.length === 0) {
+    renderRecipes([]); // or showEmptyState('No recipes yet');
+    return;
+  }
+
+  //CHECK THIS FIRST
+  const index = Math.floor(Math.random() * mockupRecipes.length);
+  const selected = mockupRecipes[index];
+
+  // If renderRecipes expects an array, pass a single-item array:
+  renderRecipes([selected]);
+
+  // If you have a dedicated single-item renderer, you could do:
+  // renderRecipe(selected);
 });
