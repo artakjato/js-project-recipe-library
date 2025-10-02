@@ -39,7 +39,7 @@ body {
 }
 
 .sorting-buttons {
-  margin-left: 7em;
+  margin-left: 17em;
 }
 
 .filter-buttons a {
@@ -48,7 +48,7 @@ body {
   border-radius: 25%;
   margin-right: 10px;
   display: inline-block;       /* makes the border wrap around */
-  padding: 8px 14px;
+  padding: 8px 30px;
   text-decoration: none;       /* remove underline */      /* default border */
   border: 2px solid#d4f5e7; 
 }
@@ -59,7 +59,7 @@ body {
   border-radius: 25%;
   margin-right: 10px;
   display: inline-block;       /* makes the border wrap around */
-  padding: 8px 14px;
+  padding: 8px 30px;
   text-decoration: none;       /* remove underline */      /* default border */
   border: 2px solid lightpink; 
 }
@@ -89,7 +89,7 @@ body {
 }
 
 .recipe-card {
-  margin-left: 5em;
+  margin-left: 2em;
   text-decoration: none;
 }
 
@@ -115,11 +115,11 @@ hr.solid {
 @media (max-width: 1600px) {
 
   .main-header {
-    font-size: 1em;
+    font-size: 3em;
   }
 
   .button-labels {
-    font-size: 15px;
+    font-size: 25px;
     width: 19em;
   }
 
@@ -131,14 +131,14 @@ hr.solid {
   .filter-buttons a {
     padding: 4px;
     align-self: center;
-    font-size: 8px;
+    font-size: 20px;
     margin-right: 2px;
   }
 
   .sorting-buttons a {
     padding: 4px;
     align-self: center;
-    font-size: 8px;
+    font-size: 20px;
     margin-right: 2px;
   }
   
@@ -148,13 +148,13 @@ hr.solid {
 
   .sorting-card,
   .recipe-card {
-    width: 90px;
-    max-height: 245px;
-    font-size: 6px;
+    width: 150px;
+    max-height: 580px;
+    font-size: 15px;
   }
 
   .cards {
-    margin-top: 1em;
+    margin-top: 2em;
   }
 }
 
@@ -162,6 +162,37 @@ hr.solid {
 @media (max-width: 767px) {
 
 .main-header{
-  font-size: 50px;
+  font-size: 30px;
 }
+
+.button-labels {
+  font-size: 17px;
+  width: 16em;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    align-items: flex-start;
+}
+
+.filter-buttons a {
+    padding: 5px;
+    align-self: left;
+    font-size: 10px;
+    margin-right: 4px;
+  }
+
+  .sorting-buttons a {
+    padding: 5px;
+    align-self: center;
+    font-size: 10px;
+    margin-right: 4px;
+  }
+
+  .recipe-card {
+    margin-left: 1em;
+  }
+
 }
