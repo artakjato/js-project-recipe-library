@@ -195,13 +195,13 @@ const mockupRecipes = [
   },
 ];
 
-//rendering recipes
 let cards = document.querySelector('.cards');
 
 function renderRecipes(recipes) {
   //cleans the .cards container 
   cards.innerHTML = "";  
   // Returns empty state
+  
   if (!Array.isArray(recipes) || recipes.length === 0) {  
     cards.innerHTML = `
   <div class="empty-state">
@@ -245,7 +245,6 @@ function renderRecipes(recipes) {
 };
 
 renderRecipes(mockupRecipes);
-
 //const allButton = document.querySelector('#all').addEventListener('click', () => renderRecipes(mockupRecipes));
 
 function filterRecipes(value) {
@@ -256,7 +255,7 @@ function filterRecipes(value) {
   const filtered = mockupRecipes.filter(r => r.diets.includes(value));
   renderRecipes(filtered);
 }
-
+//display ALL recipes 
 document.querySelector('#all').addEventListener('click', (e) => {
   e.preventDefault(); // stops page from jumping to "#"
   renderRecipes(mockupRecipes); // show all recipes
@@ -298,13 +297,14 @@ const ascendingButton = document.querySelector('#ascending').addEventListener('c
   renderRecipes(ascendingRecipes);
 });
 
+//shuffles recipes
 const surpriseButton = document.querySelector('#surprise');
 surpriseButton.addEventListener('click', () => {
   if (!mockupRecipes || mockupRecipes.length === 0) {
     renderRecipes([]); // or showEmptyState('No recipes yet');
     return;
   }
-  //CHECK THIS FIRST
+
   const index = Math.floor(Math.random() * mockupRecipes.length);
   const selected = mockupRecipes[index];
 
