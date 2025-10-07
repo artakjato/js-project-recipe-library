@@ -247,8 +247,8 @@ function renderRecipes(recipes) {
           <p><strong>Cuisine:</strong>${recipe.cuisines}</p>
           <p><strong>Preparation time:</strong> ${recipe.readyInMinutes}</p>
           <hr class="solid">
-          <p><strong>Ingredients:</strong><br>
-         ${recipe.extendedIngredients.join("<br>")}
+          <p><strong>Ingredients:</strong><br>    
+          ${recipe.extendedIngredients.join("<br>")}
           </a>
           </p>
           </div>
@@ -256,9 +256,9 @@ function renderRecipes(recipes) {
           `
   })
 };
-
-
+//Initial render of all recipes
 renderRecipes(mockupRecipes);
+
 //const allButton = document.querySelector('#all').addEventListener('click', () => renderRecipes(mockupRecipes));
 
 function filterRecipes(value) {
@@ -275,21 +275,44 @@ document.querySelector('#all').addEventListener('click', (e) => {
   renderRecipes(mockupRecipes); // show all recipes
 });
 
-const balkanButton = document.querySelector('#balkan').addEventListener('click', () => {
-  const balkanRecipe = mockupRecipes.filter(recipe => recipe.cuisine == 'Balkan');
-  renderRecipes(balkanRecipe);
-});
+// const europeanButton = document.querySelector('#european').addEventListener('click', () => {
+//   const europeanRecipe = mockupRecipes.filter(recipe => {
+//     console.log(recipe); 
+//     return recipe.cuisines.some(cuisine => cuisine == 'European');
+//   });
+//   renderRecipes(europeanRecipe);
+// });
 
-const swedishButton = document.querySelector('#swedish').addEventListener('click', () => {
-  const swedishRecipe = mockupRecipes.filter(recipe => recipe.cuisine == 'Swedish');
-  renderRecipes(swedishRecipe);
-});
+const vegetarianButton = document.querySelector('#vegetarian').addEventListener('click', () => {
+ const vegetarianRecipe = mockupRecipes.filter(recipe => {
+  console.log(recipe.diets);
+  return recipe.diets.some(diet => diet.includes('vegetarian'));
+ });
+  renderRecipes(vegetarianRecipe);
+})
 
-const usaButton = document.querySelector('#usa').addEventListener('click', () => {
-  const usaRecipe = mockupRecipes.filter(recipe => recipe.cuisine == 'USA');
-  renderRecipes(usaRecipe);
-});
+const glutenFreeButton = document.querySelector('#gluten-free').addEventListener('click', () => {
+  const glutenFreeRecipe = mockupRecipes.filter(recipe => {
+  return recipe.diets.some(diet => diet.includes('gluten free'));
+  });
+  renderRecipes(glutenFreeRecipe);
+})
 
+// const americanButton = document.querySelector('#american').addEventListener('click', () => {
+//   const americanRecipe = mockupRecipes.filter(recipe => {
+//     return recipe.cuisines.some(cuisine => cuisine =='American');
+//   });
+//   renderRecipes(americanRecipe);
+
+const dairyFreeButton = document.querySelector ('#dairy-free').addEventListener('click', () => {
+  const dairyFreeRecipe = mockupRecipes.filter(recipe => {
+  console.log(recipe.diets);
+  return recipe.diets.some(diet => diet.includes('dairy free'));
+  });
+  renderRecipes(dairyFreeRecipe);
+})
+
+//empty button
 const germanButton = document.querySelector('#german').addEventListener('click', () => {
   const germanRecipe = mockupRecipes.filter(recipe => recipe.cuisine == 'German');
   renderRecipes(germanRecipe);
