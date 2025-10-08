@@ -1,10 +1,15 @@
 //API fetch
-const recipeAPIKey = "2eacd5e91c954f8f9792e8cf8db80895";
+const recipeAPIKey = "2eacd5e91c954f8f9792e8cf8db80895"; //Store API key in a variable
 const URL = `https://api.spoonacular.com/recipes/random?number=12&apiKey=${recipeAPIKey}`;
 let mockupRecipes = []; //Array to hold mockup data
 
 function fetchRecipes() {
   fetch(URL)
+    .then(response => {
+      if (response.status === 402) { //Check if API limit is exceeded
+        alert('Payment required: Please check your Spoonacular API subscription.');
+      }
+    })
     .then(response => response.json()).then(data => mockupRecipes = data.recipes)
 }
 
@@ -284,16 +289,16 @@ document.querySelector('#all').addEventListener('click', (e) => {
 // });
 
 const vegetarianButton = document.querySelector('#vegetarian').addEventListener('click', () => {
- const vegetarianRecipe = mockupRecipes.filter(recipe => {
-  console.log(recipe.diets);
-  return recipe.diets.some(diet => diet.includes('vegetarian'));
- });
+  const vegetarianRecipe = mockupRecipes.filter(recipe => {
+    console.log(recipe.diets);
+    return recipe.diets.some(diet => diet.includes('vegetarian'));
+  });
   renderRecipes(vegetarianRecipe);
 })
 
 const glutenFreeButton = document.querySelector('#gluten-free').addEventListener('click', () => {
   const glutenFreeRecipe = mockupRecipes.filter(recipe => {
-  return recipe.diets.some(diet => diet.includes('gluten free'));
+    return recipe.diets.some(diet => diet.includes('gluten free'));
   });
   renderRecipes(glutenFreeRecipe);
 })
@@ -304,18 +309,18 @@ const glutenFreeButton = document.querySelector('#gluten-free').addEventListener
 //   });
 //   renderRecipes(americanRecipe);
 
-const dairyFreeButton = document.querySelector ('#dairy-free').addEventListener('click', () => {
+const dairyFreeButton = document.querySelector('#dairy-free').addEventListener('click', () => {
   const dairyFreeRecipe = mockupRecipes.filter(recipe => {
-  console.log(recipe.diets);
-  return recipe.diets.some(diet => diet.includes('dairy free'));
+    console.log(recipe.diets);
+    return recipe.diets.some(diet => diet.includes('dairy free'));
   });
   renderRecipes(dairyFreeRecipe);
 })
 
 //empty button
-const germanButton = document.querySelector('#german').addEventListener('click', () => {
-  const germanRecipe = mockupRecipes.filter(recipe => recipe.cuisine == 'German');
-  renderRecipes(germanRecipe);
+const funFreeButton = document.querySelector('#fun-free').addEventListener('click', () => {
+  const funFreeRecipe = mockupRecipes.filter(recipe => recipe.cuisine == 'fun free');
+  renderRecipes(funFreeRecipe);
 });
 
 

@@ -64,7 +64,8 @@ h1:hover {
   padding: 8px 30px;
   text-decoration: none;       /* remove underline */      /* default border */
   border: 2px solid#d4f5e7; 
-  color: blue; 
+  color: blue;
+  width: max-content;
 }
 
 .sorting-buttons a {
