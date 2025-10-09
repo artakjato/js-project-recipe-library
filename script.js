@@ -219,8 +219,8 @@ let cards = document.querySelector('.cards');
 function renderRecipes(recipes) {
   //cleans the .cards container 
   cards.innerHTML = "";
+  
   // Returns empty state
-
   if (!Array.isArray(recipes) || recipes.length === 0) {
     cards.innerHTML = `
   <div class="empty-state">
@@ -235,6 +235,7 @@ function renderRecipes(recipes) {
     `;
     return;
   }
+  
   //loops over each recipe in the array
   recipes.forEach(recipe => {
     cards.innerHTML += `
