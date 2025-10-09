@@ -254,7 +254,9 @@ function renderRecipes(recipes) {
           <p><strong>Preparation time:</strong> ${recipe.readyInMinutes}</p>
           <hr class="solid">
           <p><strong>Ingredients:</strong><br>    
-          ${recipe.extendedIngredients.join("<br>")}
+          ${
+            recipe.extendedIngredients.map(ingredient => ingredient.original).join("<br>") //map to loop through ingredients
+          } 
           </a>
           </p>
           </div>
