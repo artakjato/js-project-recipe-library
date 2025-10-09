@@ -6,10 +6,10 @@ body {
   font-size: 50px;
   color: darkblue;
 }
+
 /*hover effect with emoji*/
 h1:hover {
-  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text y="20" font-size="20">🍲</text></svg>')
-      16 16,
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text y="20" font-size="20">🍲</text></svg>') 16 16,
     auto;
 }
 
@@ -17,7 +17,7 @@ h1:hover {
   margin: 8px 0 4px;
   font-weight: 600;
   font-size: 20px;
-  color: blue; 
+  color: blue;
 }
 
 .button-labels {
@@ -51,19 +51,18 @@ h1:hover {
   /* justify-content: space-evenly; */
 }
 
-/*.sorting-buttons {
-  margin-left: 17em; 
-}*/
-
 .filter-buttons a {
   /*background-color: #d4f5e7;*/
   cursor: pointer;
   border-radius: 25%;
   margin-right: 10px;
-  display: inline-block;       /* makes the border wrap around */
+  display: inline-block;
+  /* makes the border wrap around */
   padding: 8px 30px;
-  text-decoration: none;       /* remove underline */      /* default border */
-  border: 2px solid#d4f5e7; 
+  text-decoration: none;
+  /* remove underline */
+  /* default border */
+  border: 2px solid#d4f5e7;
   color: blue;
   width: max-content;
 }
@@ -73,11 +72,14 @@ h1:hover {
   cursor: pointer;
   border-radius: 25%;
   margin-right: 10px;
-  display: inline-block;       /* makes the border wrap around */
+  display: inline-block;
+  /* makes the border wrap around */
   padding: 8px 30px;
-  text-decoration: none;       /* remove underline */      /* default border */
-  border: 2px solid lightpink; 
-  color: blue; 
+  text-decoration: none;
+  /* remove underline */
+  /* default border */
+  border: 2px solid lightpink;
+  color: blue;
   width: max-content;
 }
 
@@ -95,7 +97,7 @@ h1:hover {
   box-shadow: 5px 5px 18px -7px;
   background-color: #FFF;
   padding: 0 15px;
-  
+
 }
 
 .cards {
@@ -103,6 +105,12 @@ h1:hover {
   flex-direction: row;
   margin-top: 2em;
   flex-wrap: wrap;
+}
+
+.text-wrapper p,a:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
 }
 
 .recipe-card {
@@ -164,9 +172,9 @@ hr.solid {
     font-size: 20px;
     margin-right: 2px;
   }
-  
+
   .sorting-buttons {
-    margin-left:5px;
+    margin-left: 5px;
   }
 
   .sorting-card,
@@ -184,23 +192,23 @@ hr.solid {
 /*Media query TBC*/
 @media (max-width: 767px) {
 
-.main-header{
-  font-size: 30px;
-}
+  .main-header {
+    font-size: 30px;
+  }
 
-.button-labels {
-  font-size: 17px;
-  width: 16em;
-}
+  .button-labels {
+    font-size: 17px;
+    width: 16em;
+  }
 
-.buttons {
+  .buttons {
     display: flex;
     flex-direction: column;
     width: 200px;
     align-items: flex-start;
-}
+  }
 
-.filter-buttons a {
+  .filter-buttons a {
     padding: 5px;
     align-self: left;
     font-size: 10px;
@@ -218,4 +226,7 @@ hr.solid {
     margin-left: 1em;
   }
 
+  .cards {
+    justify-content: center;
+  }
 }
