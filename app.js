@@ -127,8 +127,7 @@ const funFreeButton = document.querySelector('#fun-free').addEventListener('clic
 const descendingButton = document.querySelector('#descending').addEventListener('click', () => {
   const descendingRecipes = [...mockupRecipes].sort((a, b) => b.readyInMinutes - a.readyInMinutes);
   renderRecipes(descendingRecipes);
-});
-// mockupRecipes.sort((a,b) creates a new array - so USE [...mockupRecipes].sort((a, b)
+}); // mockupRecipes.sort((a,b) creates a new array - so USE [...mockupRecipes].sort((a, b)
 
 //ascending button
 const ascendingButton = document.querySelector('#ascending').addEventListener('click', () => {

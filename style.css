@@ -107,6 +107,7 @@ h1:hover {
   flex-wrap: wrap;
 }
 
+
 .text-wrapper p,a:nth-child(2) {
   white-space: nowrap;
   overflow: hidden !important;
@@ -117,6 +118,11 @@ h1:hover {
   margin-left: 2em;
   text-decoration: none;
   margin-bottom: 1em;
+}
+
+.recipe-card:hover {
+  transform: scale(1.03); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
 }
 
 .food-image {
